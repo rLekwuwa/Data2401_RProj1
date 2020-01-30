@@ -13,15 +13,15 @@ library(datasauRus)
 ```
 
 
-### Exercise 1
+### Exercise 1. 
 
-(Type your answer to Exercise 1 here. This exercise does not require any R code. **Remove notes like this in your final product**)
+(there are 1846 rows and 2 columns. The variables are mean, standard deviation, and correlation)
 
 ### Exercise 2
 
-(The answers for this Exercise are given for you below. But you should clean up some of the narrative so that it only includes what you want to turn in.)
 
-First let's plot the data in the dino dataset:
+
+#plot the data in the dino dataset:
 
 ```{r plot-dino, fig.height=3, fig.width=6}
 dino_data <- datasaurus_dozen %>%
@@ -30,7 +30,7 @@ ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
 
-And next calculate the correlation between `x` and `y` in this dataset:
+#calculate the correlation between `x` and `y` in this dataset:
 
 ```{r cor-dino}
 dino_data %>%
@@ -64,3 +64,5 @@ I'm some text, you should replace me with more meaningful text...
 ### Exercise 5
 
 (Add code and narrative as needed. To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.)
+
+? datasaurus_dozen
