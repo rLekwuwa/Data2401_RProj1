@@ -1,0 +1,79 @@
+---
+title: "R Project 1 - Hello R"
+author: "Dr. Katherine Shoemaker"
+date: "1/23/2020"
+output: html_document
+---
+
+### Load packages
+
+```{r load-packages, message=FALSE}
+library(tidyverse) 
+library(datasauRus)
+```
+
+
+### Exercise 1. 
+
+(there are 1846 rows and 2 columns. The variables are mean, standard deviation, and correlation)
+
+### Exercise 2
+
+
+
+#plot x vs y data dino dataset:
+
+```{r plot-dino, fig.height=3, fig.width=6}
+dino_data <- datasaurus_dozen %>%
+  filter(dataset == "dino")
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+#calculate the correlation between `x` and `y` in this dataset:
+
+```{r cor-dino}
+dino_data %>%
+  summarize(r = cor(x, y))
+```
+
+### Exercise 3
+
+
+#plot x vs y tiger dataset:
+
+```{r plot-tiger, fig.height=4, fig.width=8}
+tiger_data <- datasaurus_dozen %>%
+  filter(dataset == "tiger")
+ggplot(data = tiger_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+#calculate the correlation between `x` and `y` in this dataset:
+
+```{r cor-tiger}
+tiger_data %>%
+  summarize(r = cor(x, y))
+
+
+```
+
+I'm some text, you should replace me with more meaningful text...
+
+
+
+### Exercise 4
+
+(Add code and narrative as needed. Note that two R chunks are given but they are not labeled. Use the convention from above to name them appropriately.)
+
+```{r}
+```
+
+```{r}
+```
+
+### Exercise 5
+
+(Add code and narrative as needed. To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.)
+
+? datasaurus_dozen
