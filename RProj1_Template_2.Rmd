@@ -15,7 +15,7 @@ library(datasauRus)
 
 ### Exercise 1. 
 
-(there are 1846 rows and 2 columns. The variables are mean, standard deviation, and correlation)
+(there are 142 rows and 2 columns. 26 variables)
 
 ### Exercise 2
 
@@ -40,19 +40,19 @@ dino_data %>%
 ### Exercise 3
 
 
-#plot x vs y tiger dataset:
+#plot x vs y star dataset:
 
-```{r plot-away, fig.height=3, fig.width=6}
-away_data <- datasaurus_dozen %>%
-  filter(dataset == "away")
-ggplot(data = away_data, mapping = aes(x = x, y = y)) +
+```{r plot-star, fig.height=3, fig.width=6}
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
 
 #calculate the correlation between `x` and `y` in this dataset:
 
-```{r cor-away}
-away_data %>%
+```{r cor-star}
+star_data %>%
   summarize(r = cor(x, y))
 
 
@@ -94,4 +94,20 @@ circle_data %>%
 
 (Add code and narrative as needed. To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.)
 
-? datasaurus_dozen
+```{r}
+
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
+  geom_point()+
+  facet_wrap(~ dataset, ncol = 3) + # facet the dataset variable, in 3 cols
+  theme(legend.position = "none")
+```
+
+```{r}
+  
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```
+
+
