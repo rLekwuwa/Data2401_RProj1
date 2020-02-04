@@ -42,17 +42,17 @@ dino_data %>%
 
 #plot x vs y tiger dataset:
 
-```{r plot-tiger, fig.height=4, fig.width=8}
-tiger_data <- datasaurus_dozen %>%
-  filter(dataset == "tiger")
-ggplot(data = tiger_data, mapping = aes(x = x, y = y)) +
+```{r plot-away, fig.height=3, fig.width=6}
+away_data <- datasaurus_dozen %>%
+  filter(dataset == "away")
+ggplot(data = away_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
 
 #calculate the correlation between `x` and `y` in this dataset:
 
-```{r cor-tiger}
-tiger_data %>%
+```{r cor-away}
+away_data %>%
   summarize(r = cor(x, y))
 
 
@@ -65,6 +65,24 @@ I'm some text, you should replace me with more meaningful text...
 ### Exercise 4
 
 (Add code and narrative as needed. Note that two R chunks are given but they are not labeled. Use the convention from above to name them appropriately.)
+
+#plot x vs y circle dataset:
+
+```{r plot-circle, fig.height=3, fig.width=6}
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+#calculate the correlation between `x` and `y` in this dataset:
+
+```{r cor-circle}
+circle_data %>%
+  summarize(r = cor(x, y))
+
+
+```
 
 ```{r}
 ```
